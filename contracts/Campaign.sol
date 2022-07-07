@@ -1,18 +1,32 @@
-pragma solidity ^0.4.26;
+//pragma solidity ^0.4.26;
+pragma experimental ABIEncoderV2;
 
 import "hardhat/console.sol";
 
 contract CampaignFactory {
-    address[] public deployedCampaigns;
-
-    function createCampaign(uint minimum) public {
-        address newCampaign = new Campaign(minimum, msg.sender);
-        deployedCampaigns.push(newCampaign);
+    //address[] public deployedCampaigns;
+    struct MyCampaign {
+        address addressCampaign;
+        string title;
+        string description;
     }
 
-    function getDeployedCampaigns() public view returns (address[]) {
+    MyCampaign[] public myCampaigns;
+
+    function createCampaign(uint minimum, string title, string description) public {
+        MyCampaign memory newCampaign = MyCampaign({
+            addressCampaign: new Campaign(minimum, msg.sender),
+            title: title,
+            description: description
+        });
+
+        myCampaigns.push(newCampaign);
+        
+    }
+
+    function getDeployedCampaigns() public view returns (MyCampaign[]) {
         console.log("Yo yo, I am a contract and I am smart");
-        return deployedCampaigns;
+        return myCampaigns;
     }
 }
 
