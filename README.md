@@ -4,7 +4,7 @@ This is modified version of the other Crowdfunding kickstart app in other reposi
 
 klink to test the App: https://live.trainingcompanion.app/version-test/web3_kickstarter
 
-What does it do?
+<h1>What does it do?</h1>
 This is proof of concept of a decentralized crowdfunding application. The application enables Project Founders to create a funding campaign. Once created, people wanting to fund the project (Contributers) can send money to the campaign. The funds stay in a smart contract on Ethereum. When the Project Founder wants to spend money (to buy goods or services for his project, such as marketing campaign or raw materials), he needs to issue a spending requests (informing the concept, amount and provider). The contributers can approve or reject the request. The request is then processed if more than 50% of the contributers approve the request.
 
 How is it implemented?
